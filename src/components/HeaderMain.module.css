@@ -1,0 +1,54 @@
+header.container {
+  width: 750px;
+  margin: 4rem auto;
+  display: flex;
+  justify-content: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+header.container p {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+header.container span {
+  color: var(--white);
+  font-weight: bold;
+  background: var(--gray-200);
+  width: 1.36rem;
+  height: 1.36rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+header.container .todoCreate {
+  margin-left: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+header.container .todoCreate p {
+  color: var(--blue-500);
+}
+
+header.container .todoComplete {
+  margin-right: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+header.container .todoComplete p {
+  color: var(--purple-500);
+}

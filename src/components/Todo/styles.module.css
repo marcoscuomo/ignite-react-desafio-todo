@@ -1,0 +1,58 @@
+.container {
+  background: var(--gray-400);
+  border-color: var(--gray-350);
+  width: 45rem;
+  height: 4.5rem;
+  border-radius: 0.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.container .incompleteButtonTodo {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: none;
+  border: 2px solid var(--blue-500);
+  font-size: 0rem;
+}
+
+.container .completeButtonTodo {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--purple-400);
+  border: none;
+  font-size: 0.8rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container > p {
+  font-size: 0.9rem;
+}
+
+.incompleteDescriptionTodo {
+  color: var(--gray-100);
+}
+
+.completeDescriptionTodo {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+.container .deleteTodo {
+  background: none;
+  border: none;
+}
+
+.container .deleteTodo svg {
+  color: var(--gray-300);
+}
