@@ -19,14 +19,13 @@ interface PropsTodo {
 
 export const HeaderMain = () => {
   const { todos, setTodos } = useContext(TodoContext);
-  const [todosCount, setTodosCount] = useState(todos);
   const [totals, setTotals] = useState<ICountTodo>({
     totalTodos: 0,
     totalCompleted: 0,
   });
-  // console.log("todos", todos);
+
   useEffect(() => {
-    const totalTodo = todosCount!.reduce(
+    const totalTodo = todos.reduce(
       ({ totalTodos, totalCompleted }, todoUser) => {
         if (todoUser.completed) {
           totalCompleted++;
@@ -38,7 +37,7 @@ export const HeaderMain = () => {
     );
 
     setTotals(totalTodo);
-  }, []);
+  }, [todos]);
 
   return (
     <header className={styles.container}>

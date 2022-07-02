@@ -1,3 +1,5 @@
+import { v4 as uuid } from "uuid";
+
 import { ChangeEvent, FormEvent, useContext, useEffect, useState } from "react";
 import { PlusCircle } from "phosphor-react";
 import { TodoContext, useTodo } from "../data/DataContext";
@@ -5,7 +7,7 @@ import { TodoContext, useTodo } from "../data/DataContext";
 import styles from "./AddTodo.module.css";
 
 interface ITodo {
-  id: number;
+  id: string;
   description: string;
   completed: boolean;
 }
@@ -25,10 +27,10 @@ const AddTodo = () => {
   };
 
   function addTodo(todo: string) {
-    let idTodo = todos!.length;
-    idTodo++;
+    // let idTodo = todos!.length;
+    // idTodo++;
     const newTodo = {
-      id: idTodo,
+      id: uuid(),
       description: todo,
       completed: false,
     };
