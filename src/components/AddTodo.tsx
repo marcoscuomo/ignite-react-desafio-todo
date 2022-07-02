@@ -1,11 +1,17 @@
 import { ChangeEvent, FormEvent, useContext, useEffect, useState } from "react";
 import { PlusCircle } from "phosphor-react";
-import { DataContext } from "../data/DataContext";
+import { TodoContext, useTodo } from "../data/DataContext";
 
 import styles from "./AddTodo.module.css";
 
+interface ITodo {
+  id: number;
+  description: string;
+  completed: boolean;
+}
+
 const AddTodo = () => {
-  const { todos, setTodos } = useContext(DataContext);
+  const { todos, setTodos } = useTodo();
 
   const [newTodo, setNewTodo] = useState("");
 
@@ -19,17 +25,15 @@ const AddTodo = () => {
   };
 
   function addTodo(todo: string) {
-    let currentTodo = todos;
-    let idTodo = todos.length;
+    let idTodo = todos!.length;
     idTodo++;
-
-    currentTodo.push({
+    const newTodo = {
       id: idTodo,
       description: todo,
       completed: false,
-    });
-    setTodos(currentTodo);
-    console.log("todos ==> ", todos);
+    };
+
+    setTodos([...todos, newTodo]);
   }
 
   return (

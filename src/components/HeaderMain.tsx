@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { DataContext } from "../data/DataContext";
+import { TodoContext } from "../data/DataContext";
 import styles from "./HeaderMain.module.css";
 
 interface ITodo {
@@ -18,7 +18,7 @@ interface PropsTodo {
 }
 
 export const HeaderMain = () => {
-  const { todos } = useContext(DataContext);
+  const { todos, setTodos } = useContext(TodoContext);
   const [todosCount, setTodosCount] = useState(todos);
   const [totals, setTotals] = useState<ICountTodo>({
     totalTodos: 0,
@@ -26,7 +26,7 @@ export const HeaderMain = () => {
   });
   // console.log("todos", todos);
   useEffect(() => {
-    const totalTodo = todosCount.reduce(
+    const totalTodo = todosCount!.reduce(
       ({ totalTodos, totalCompleted }, todoUser) => {
         if (todoUser.completed) {
           totalCompleted++;
